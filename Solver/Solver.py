@@ -1,18 +1,3 @@
-"""Simulated Bifurcation solver.
-
-Integrates the simplified SB Hamiltonian of eq. (5) via symplectic Euler,
-with B independent trajectories run in parallel on the GPU.
-
-Equations of motion (eq. 6-7):
-    x_dot = Delta * y
-    y_dot = -(K * x^2 - p(t) + Delta) * x + xi0 * (J @ x) + xi0 * h
-
-Ising convention (matches the report):
-    H(s) = -1/2 * s^T J s  -  h^T s,   s in {-1, +1}^N,
-with J symmetric and zero-diagonal, equivalent to
-    H(s) = -sum_{i<j} J_ij s_i s_j - sum_i h_i s_i.
-"""
-
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Callable, Optional

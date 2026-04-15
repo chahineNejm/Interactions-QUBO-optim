@@ -66,7 +66,6 @@ def partition_small():
 
 
 # 8. Sherrington-Kirkpatrick spin glass (small). No closed-form optimum;
-#    we return None and let brute-force verify for N small enough.
 def sk_glass(N: int = 12, seed: int = 0):
     g = torch.Generator().manual_seed(seed)
     J = torch.randn(N, N, generator=g) / (N ** 0.5)
